@@ -9,7 +9,7 @@ public class StatService {
         return value;
     }
 
-    public long CostAverage(long[] sales) {
+    public long costAverage(long[] sales) {
         return sum(sales) / sales.length;
     }
 
@@ -31,7 +31,6 @@ public class StatService {
         long value = sales[0];
         int numMounth = 1;
         int indexMounth = 0;
-        long average = CostAverage(sales);
         for (long sale : sales) {
             indexMounth++;
             if (value > sale) {
@@ -44,7 +43,7 @@ public class StatService {
 
     public int countMounthBelowAverage(long[] sales) {
         int value = 0;
-        long average = CostAverage(sales);
+        long average = costAverage(sales);
         for (long sale : sales) {
             if (sale < average) {
                 value++;
@@ -55,7 +54,7 @@ public class StatService {
 
     public int countMounthAboveAverage(long[] sales) {
         int value = 0;
-        long average = CostAverage(sales);
+        long average = costAverage(sales);
         for (long sale : sales) {
             if (sale > average) {
                 value++;
