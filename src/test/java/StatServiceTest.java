@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 public class StatServiceTest {
 
     @Test
-    public void sumTest(){
+    public void sumTest() {
         StatService statService = new StatService();
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
@@ -15,19 +15,21 @@ public class StatServiceTest {
 
         Assertions.assertEquals(expectedSum, actualSum);
     }
+
     @Test
-    public void sredStoimTest(){
+    public void CostAverageTest() {
         StatService statService = new StatService();
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         long expectedSum = 15;
-        long actualSum = statService.sredStoim(sales);
+        long actualSum = statService.CostAverage(sales);
 
         Assertions.assertEquals(expectedSum, actualSum);
     }
+
     @Test
-    public void maxValueMounthTest(){
+    public void maxValueMounthTest() {
         StatService statService = new StatService();
 
         long[] sales = {8, 15, 13, 15, 17, 21, 19, 20, 7, 14, 14, 18};
@@ -37,8 +39,9 @@ public class StatServiceTest {
 
         Assertions.assertEquals(expectedSum, actualSum);
     }
+
     @Test
-    public void minValueMounthTest(){
+    public void minValueMounthTest() {
         StatService statService = new StatService();
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
@@ -48,25 +51,27 @@ public class StatServiceTest {
 
         Assertions.assertEquals(expectedSum, actualSum);
     }
+
     @Test
-    public void countMounthNijeSredTest(){
+    public void countMounthBelowAverageTest() {
         StatService statService = new StatService();
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         long expectedSum = 5;
-        long actualSum = statService.countMounthNijeSred(sales);
+        long actualSum = statService.countMounthBelowAverage(sales);
 
         Assertions.assertEquals(expectedSum, actualSum);
     }
+
     @Test
-    public void countMounthVisheSredTest(){
+    public void countMounthAboveAverageTest() {
         StatService statService = new StatService();
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         long expectedSum = 5;
-        long actualSum = statService.countMounthVisheSred(sales);
+        long actualSum = statService.countMounthAboveAverage(sales);
 
         Assertions.assertEquals(expectedSum, actualSum);
     }
