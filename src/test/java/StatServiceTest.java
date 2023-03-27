@@ -21,7 +21,6 @@ public class StatServiceTest {
         StatService statService = new StatService();
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-
         long expectedSum = 15;
         long actualSum = statService.costAverage(sales);
 
@@ -32,9 +31,9 @@ public class StatServiceTest {
     public void maxValueMounthTest() {
         StatService statService = new StatService();
 
-        long[] sales = {8, 15, 13, 15, 17, 21, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 21, 19, 20, 7, 14, 14, 21};
 
-        long expectedSum = 6;
+        long expectedSum = 12;
         long actualSum = statService.maxValueMounth(sales);
 
         Assertions.assertEquals(expectedSum, actualSum);

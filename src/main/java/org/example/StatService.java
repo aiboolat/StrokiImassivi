@@ -10,18 +10,23 @@ public class StatService {
     }
 
     public long costAverage(long[] sales) {
-        return sum(sales) / sales.length;
+        return (long) ((double) sum(sales) / sales.length);
     }
 
     public long maxValueMounth(long[] sales) {
         long value = 0;
-        int numMounth = 1;
+        int numMounth = 0;
         int indexMounth = 0;
-        for (long sale : sales) {
+        for (int i = 0; i < sales.length; i++) {
+            long sale = sales[i];
             indexMounth++;
-            if (value < sale) {
-                numMounth = indexMounth;
-                value = sale;
+            if (value <= sale) {
+                if (value == sale) {
+                    numMounth = indexMounth;
+                } else {
+                    numMounth = indexMounth;
+                    value = sale;
+                }
             }
         }
         return numMounth;
@@ -29,7 +34,7 @@ public class StatService {
 
     public long minValueMounth(long[] sales) {
         long value = sales[0];
-        int numMounth = 1;
+        int numMounth = 0;
         int indexMounth = 0;
         for (long sale : sales) {
             indexMounth++;
@@ -63,4 +68,3 @@ public class StatService {
         return value;
     }
 }
-
